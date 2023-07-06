@@ -11,6 +11,8 @@ public class BookCopy {
 	private Timestamp publishDate;
 	private String bookPosition;
 	private String bookStaus;
+	private int currentPage;
+	private int totalPage;
 	
 	public BookCopy(int bookSeq, String isbn, String title, String author, 
 			Timestamp publishDate,String bookPosition, String bookStaus) {
@@ -71,6 +73,18 @@ public class BookCopy {
 	}
 	public void setBookStaus(String bookStaus) {
 		this.bookStaus = bookStaus;
+	}
+	public int getCurrentPage() {
+		return currentPage;
+	}
+	public void setCurrentPage(int currentPage) {
+		this.currentPage = currentPage;
+	}
+	public int getTotalPage() {
+		return totalPage;
+	}
+	public void setTotalPage(int totalPage) {
+		this.totalPage = totalPage;
 	}
 	@Override
 	public String toString() {

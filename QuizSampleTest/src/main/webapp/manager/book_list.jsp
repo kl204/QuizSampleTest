@@ -1,5 +1,8 @@
 <%@page import="bitedu.bipa.member.vo.BookCopy"%>
+<%@page import="bitedu.bipa.member.service.PaginationAlgorithm" %>
 <%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -57,21 +60,49 @@
 </head>
 <body>
 ${param.flag=='true'?"<script>alert('삭제성공');</script>":""}
+        <% 
+        int currentPage = (int)request.getAttribute("currentPage"); // 현재 페이지 번호
+        int itemsPerPage = 5; // 페이지당 항목 수
+        List<BookCopy> itemList = (List)request.getAttribute("list");
+        
+        
+        PaginationAlgorithm paginationAlgorithm = new PaginationAlgorithm(itemList, itemsPerPage);
+        int totalPages = paginationAlgorithm.getTotalPages();
+        List<BookCopy> items = paginationAlgorithm.getItemsForPage(currentPage);
+        
+        
+        %>
+
 <table>
 	<tr><th colspan="5" id="title">도서리스트</th></tr>
 	<tr><td>순번</td><td>타이틀</td><td>저자</td><td>출판일</td><td></td></tr>
-	
-	    <c:forEach var="copy" items="${list}">
-        <tr>
+	<%  for (BookCopy item : items) { %>
+        <tr>       
+            <td><%=item.getBookSeq() %></td>
+            <td><a href='./BlmController?cmd=view_detail&bookSeq=<%=item.getBookSeq()%>'><%=item.getTitle() %></a></td>
+            <td><%=item.getAuthor() %></td>
+            <td><fmt:formatDate value="<%=item.getPublishDate() %>" pattern="yyyy-MM-dd"/> </td>
+            <td><a href="./BlmController?cmd=remove&bookSeq=<%=item.getBookSeq() %>">삭제</a></td></tr>
+    <% } %>
+    <tr>
+    	<td colspan = "5">
+        <% if (currentPage > 1) { %>
+            <a href="./BlmController?cmd=list&page=<%= currentPage - 1 %>">&laquo; Previous</a>
+        <% }
         
+        for (int i = 1; i <= totalPages; i++) {
+            if (i == currentPage) { %>
+                <span class="current"><%= i %></span>
+            <% } else { %>
+                <a href="./BlmController?cmd=list&page=<%= i %>"><%= i %></a>
+            <% }
+        }
         
-            <td>${copy.bookSeq}</td>
-            <td><a href='./BlmController?cmd=view_detail&bookSeq=${copy.bookSeq}'>${copy.title}</a></td>
-            <td>${copy.author}</td>
-            <td><fmt:formatDate value="${copy.publishDate}" pattern="yyyy-MM-dd"/> </td>
-            <td><a href="./BlmController?cmd=remove&bookSeq=${copy.bookSeq}">삭제</a></td></tr>
-    </c:forEach>	
-
+        if (currentPage < totalPages) { %>
+            <a href="./BlmController?cmd=list&page=<%= currentPage + 1 %>">Next >></a>
+        <% } %>
+        </td>
+    </tr>
 	<tr><td colspan="5"><a href="./memberController?cmd=view_user_regist"><button>도서등록</button></a></td></tr>
 </table>
 </body>

@@ -14,6 +14,25 @@ public class QuizService {
 		list.add(new BookCopy(1,"PM0000037903","슬픈 세상의 기쁜 말 : 당신을 살아 있게 하는 말은 무엇입니까","정혜윤 지음",new Timestamp(new Date(2021-1900,12,23).getTime()),"BS-0001","BM-0001"));
 		list.add(new BookCopy(2,"PM0000037904","유창한 영어회화를 꼭 원하는 분. 1 Fluent English","강성구 지음",new Timestamp(new Date(2023-1900,1,28).getTime()),"BS-0001","BM-0001"));
 		list.add(new BookCopy(3,"PM0000037905","도둑맞은 뇌 : 뇌과학이 발견한 기억의 7가지 오류","대니얼 샥터 지음 ; 홍보람 옮김",new Timestamp(new Date(2023-1900,9,8).getTime()),"BS-0001","BM-0001"));
+		list.add(new BookCopy(4,"PM0000037903","슬픈 세상의 기쁜 말 : 당신을 살아 있게 하는 말은 무엇입니까","정혜윤 지음",new Timestamp(new Date(2021-1900,12,23).getTime()),"BS-0001","BM-0001"));
+		list.add(new BookCopy(5,"PM0000037904","유창한 영어회화를 꼭 원하는 분. 1 Fluent English","강성구 지음",new Timestamp(new Date(2023-1900,1,28).getTime()),"BS-0001","BM-0001"));
+		list.add(new BookCopy(6,"PM0000037905","도둑맞은 뇌 : 뇌과학이 발견한 기억의 7가지 오류","대니얼 샥터 지음 ; 홍보람 옮김",new Timestamp(new Date(2023-1900,9,8).getTime()),"BS-0001","BM-0001"));
+		list.add(new BookCopy(7,"PM0000037903","슬픈 세상의 기쁜 말 : 당신을 살아 있게 하는 말은 무엇입니까","정혜윤 지음",new Timestamp(new Date(2021-1900,12,23).getTime()),"BS-0001","BM-0001"));
+		list.add(new BookCopy(8,"PM0000037904","유창한 영어회화를 꼭 원하는 분. 1 Fluent English","강성구 지음",new Timestamp(new Date(2023-1900,1,28).getTime()),"BS-0001","BM-0001"));
+		list.add(new BookCopy(9,"PM0000037905","도둑맞은 뇌 : 뇌과학이 발견한 기억의 7가지 오류","대니얼 샥터 지음 ; 홍보람 옮김",new Timestamp(new Date(2023-1900,9,8).getTime()),"BS-0001","BM-0001"));
+		list.add(new BookCopy(10,"PM0000037903","슬픈 세상의 기쁜 말 : 당신을 살아 있게 하는 말은 무엇입니까","정혜윤 지음",new Timestamp(new Date(2021-1900,12,23).getTime()),"BS-0001","BM-0001"));
+		list.add(new BookCopy(12,"PM0000037904","유창한 영어회화를 꼭 원하는 분. 1 Fluent English","강성구 지음",new Timestamp(new Date(2023-1900,1,28).getTime()),"BS-0001","BM-0001"));
+		list.add(new BookCopy(13,"PM0000037905","도둑맞은 뇌 : 뇌과학이 발견한 기억의 7가지 오류","대니얼 샥터 지음 ; 홍보람 옮김",new Timestamp(new Date(2023-1900,9,8).getTime()),"BS-0001","BM-0001"));
+		list.add(new BookCopy(14,"PM0000037903","슬픈 세상의 기쁜 말 : 당신을 살아 있게 하는 말은 무엇입니까","정혜윤 지음",new Timestamp(new Date(2021-1900,12,23).getTime()),"BS-0001","BM-0001"));
+		list.add(new BookCopy(15,"PM0000037904","유창한 영어회화를 꼭 원하는 분. 1 Fluent English","강성구 지음",new Timestamp(new Date(2023-1900,1,28).getTime()),"BS-0001","BM-0001"));
+		list.add(new BookCopy(16,"PM0000037905","도둑맞은 뇌 : 뇌과학이 발견한 기억의 7가지 오류","대니얼 샥터 지음 ; 홍보람 옮김",new Timestamp(new Date(2023-1900,9,8).getTime()),"BS-0001","BM-0001"));
+		list.add(new BookCopy(17,"PM0000037903","슬픈 세상의 기쁜 말 : 당신을 살아 있게 하는 말은 무엇입니까","정혜윤 지음",new Timestamp(new Date(2021-1900,12,23).getTime()),"BS-0001","BM-0001"));
+		list.add(new BookCopy(18,"PM0000037904","유창한 영어회화를 꼭 원하는 분. 1 Fluent English","강성구 지음",new Timestamp(new Date(2023-1900,1,28).getTime()),"BS-0001","BM-0001"));
+		list.add(new BookCopy(19,"PM0000037905","도둑맞은 뇌 : 뇌과학이 발견한 기억의 7가지 오류","대니얼 샥터 지음 ; 홍보람 옮김",new Timestamp(new Date(2023-1900,9,8).getTime()),"BS-0001","BM-0001"));
+		list.add(new BookCopy(20,"PM0000037903","슬픈 세상의 기쁜 말 : 당신을 살아 있게 하는 말은 무엇입니까","정혜윤 지음",new Timestamp(new Date(2021-1900,12,23).getTime()),"BS-0001","BM-0001"));
+		list.add(new BookCopy(21,"PM0000037904","유창한 영어회화를 꼭 원하는 분. 1 Fluent English","강성구 지음",new Timestamp(new Date(2023-1900,1,28).getTime()),"BS-0001","BM-0001"));
+	
+
 	}
 	
 	public boolean checkId(String id) {
@@ -78,4 +97,8 @@ public class QuizService {
 		}
 		return flag;
 	}
+	
+	
+	
+	
 }

@@ -6,6 +6,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,6 +17,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import bitedu.bipa.member.service.QuizService;
 import bitedu.bipa.member.vo.BookCopy;
+import bitedu.bipa.member.service.PaginationAlgorithm;
+
 
 /**
  * Servlet implementation class BlmController
@@ -56,9 +59,17 @@ public class BlmController extends HttpServlet {
 		
 		
 		if(cmd.equals("list")) {
-			ArrayList<BookCopy> list =  qs.searchBookAll();
+			ArrayList<BookCopy> list = qs.searchBookAll();
 			
+			String currentPage = request.getParameter("page") ;
+			
+			currentPage = currentPage == null? "1" : currentPage;
+			
+			int currentPages = Integer.parseInt(currentPage);
+		
 			request.setAttribute("list", list);
+			request.setAttribute("currentPage", currentPages);
+
 
 		} else if(cmd.equals("regist")) {
 			boolean flag =false;
