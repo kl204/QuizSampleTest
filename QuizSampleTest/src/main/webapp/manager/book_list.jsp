@@ -19,11 +19,10 @@
             margin: 20px auto;
         }
         td {
-            width: 150px;
             height: 50px;
             padding: 5px;
             font-size: 20px;
-            /* text-align: center; */
+            text-align: center; 
         }
 
         input , select {
@@ -56,6 +55,19 @@
         	height: 80px;
         	font-size: 50px;
         }
+        
+        .button-link {
+			display: flex;
+			margin-left: 20px;
+			background-image: url('data/delete.png');
+  			background-repeat: no-repeat;
+  			background-size: contain;
+  			width: 100px; /* 이미지의 가로 크기에 맞게 조절 */
+  			height: 30px; /* 이미지의 세로 크기에 맞게 조절 */
+  			padding: 0;
+  			border: none;
+  			text-indent: -9999px; /* 텍스트 숨김 처리 */
+}
     </style>
 </head>
 <body>
@@ -82,7 +94,7 @@ ${param.flag=='true'?"<script>alert('삭제성공');</script>":""}
             <td><a href='./BlmController?cmd=view_detail&bookSeq=<%=item.getBookSeq()%>'><%=item.getTitle() %></a></td>
             <td><%=item.getAuthor() %></td>
             <td><fmt:formatDate value="<%=item.getPublishDate() %>" pattern="yyyy-MM-dd"/> </td>
-            <td><a href="./BlmController?cmd=remove&bookSeq=<%=item.getBookSeq() %>">삭제</a></td></tr>
+            <td><a href="./BlmController?cmd=remove&bookSeq=<%=item.getBookSeq() %>" class="button-link">삭제</a></td></tr>
     <% } %>
     <tr>
     	<td colspan = "5">
